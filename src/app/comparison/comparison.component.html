@@ -1,0 +1,19 @@
+<div>
+  <h2>Comparison of Algorithms</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="sizes">Sizes (comma separated):</label>
+      <input type="text" id="sizes" [(ngModel)]="sizesInput" name="sizes" required>
+    </div>
+    <div>
+      <label for="numSamples">Number of Samples:</label>
+      <input type="number" id="numSamples" [(ngModel)]="numSamples" name="numSamples" required>
+    </div>
+    <button type="submit">Compare</button>
+  </form>
+</div>
+
+<div *ngIf="comparisonResult">
+  <h3>Results</h3>
+  <canvas #comparisonChart id="comparisonChart"></canvas>
+</div>
